@@ -4,16 +4,15 @@ import './App.css';
 function App() {
   return (
     <div className="portfolio-container">
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="content-wrapper">
           <h1 className="greeting">Hello, I'm Daksh Jain</h1>
           
           <div className="profile-image-container">
             <img 
-              src="https://customer-assets.emergentagent.com/job_ead78139-2e78-436d-9d6b-c7487585cc12/artifacts/9xfkspev_Gemini_Generated_Image_27sz2627sz2627sz.png" 
-              alt="Daksh Jain Sketch" 
-              className="profile-sketch"
+              src="https://customer-assets.emergentagent.com/job_daksh-showcase/artifacts/diwmo2el_Profile%20Photo.jpg" 
+              alt="Daksh Jain" 
+              className="profile-photo"
             />
           </div>
 
@@ -37,44 +36,38 @@ function App() {
               and the tools I'm testing. I keep it simple because that's how I think about it. If you're into 
               building things and figuring out what's next in tech, you'll probably get what I'm doing.
             </p>
+
+            <div className="social-links">
+              <a 
+                href="https://www.linkedin.com/in/dakshjain-d/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                LinkedIn
+              </a>
+              <span className="separator">·</span>
+              <a 
+                href="https://www.instagram.com/dakshjxin" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                Instagram
+              </a>
+              <span className="separator">·</span>
+              <a 
+                href="https://x.com/dakshjxin" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                X
+              </a>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Footer with Social Links */}
-      <footer className="footer-section">
-        <div className="footer-content">
-          <div className="social-links">
-            <a 
-              href="https://www.linkedin.com/in/dakshjain-d/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              LinkedIn
-            </a>
-            <span className="separator">·</span>
-            <a 
-              href="https://www.instagram.com/dakshjxin" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              Instagram
-            </a>
-            <span className="separator">·</span>
-            <a 
-              href="https://x.com/dakshjxin" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              X
-            </a>
-          </div>
-          <p className="footer-text">© 2025 Daksh Jain</p>
-        </div>
-      </footer>
     </div>
   );
 }
