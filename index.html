@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAKSH JAIN — take your ca firm online.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #f7f4ef; --bg2: #f0ebe2; --ink: #1c1915; --ink2: #3d3830;
+  --muted: #8a8278; --gold: #b8873a; --gold-light: #f0e6d3; --gold-pale: #faf5ec;
+  --border: #e2dbd0; --white: #ffffff; --green: #3d6b4f; --green-light: #e8f0eb;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--ink); font-weight: 300; font-size: 17px; line-height: 1.75; cursor: none; overflow-x: hidden; }
+.cursor { width: 12px; height: 12px; background: var(--gold); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; transform: translate(-50%,-50%); }
+.cursor-ring { width: 40px; height: 40px; border: 1.5px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; transform: translate(-50%,-50%); opacity: 0.6; }
+nav { padding: 22px 52px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 500; background: var(--bg); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: 1px; }
+.nav-logo span { color: var(--gold); font-size: 26px; line-height: 1; vertical-align: middle; }
+.nav-right { display: flex; align-items: center; gap: 32px; }
+.nav-link { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+.nav-link:hover { color: var(--ink); }
+.nav-cta { font-size: 13px; font-weight: 500; color: var(--white); background: var(--ink); text-decoration: none; padding: 11px 24px; letter-spacing: 0.5px; transition: background 0.2s; }
+.nav-cta:hover { background: var(--gold); }
+
+.hero { min-height: 92vh; display: grid; grid-template-columns: 1fr 1fr; max-width: 1200px; margin: 0 auto; padding: 80px 52px; gap: 60px; align-items: center; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 36px; }
+.hero-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 6vw, 82px); line-height: 1.04; font-weight: 300; margin-bottom: 28px; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-sub { font-size: 18px; color: var(--muted); max-width: 420px; line-height: 1.9; margin-bottom: 44px; }
+.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-primary { background: var(--gold); color: var(--white); padding: 16px 36px; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; text-decoration: none; display: inline-block; transition: all 0.25s; border: 1px solid var(--gold); }
+.btn-primary:hover { background: transparent; color: var(--gold); }
+.btn-ghost { font-size: 14px; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: all 0.2s; }
+.btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+.hero-card { background: var(--white); border: 1px solid var(--border); padding: 40px; position: relative; }
+.hero-card::before { content: ''; position: absolute; top: 8px; left: 8px; right: -8px; bottom: -8px; border: 1px solid var(--gold); opacity: 0.25; pointer-events: none; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-bottom: 1px; }
+.stat { background: var(--white); padding: 28px 24px; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+.stat-num span { color: var(--gold); font-size: 26px; }
+.stat-label { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.hero-quote { background: var(--gold-pale); border: 1px solid var(--border); padding: 24px; margin-top: 1px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--ink2); line-height: 1.6; }
+.hero-quote cite { display: block; font-style: normal; font-size: 12px; color: var(--muted); margin-top: 10px; letter-spacing: 1px; font-family: 'Outfit', sans-serif; }
+
+.marquee-wrap { background: var(--ink); padding: 16px 0; overflow: hidden; display: flex; }
+.marquee { display: flex; animation: marquee 22s linear infinite; white-space: nowrap; }
+.marquee span { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #4a4540; padding: 0 28px; }
+.marquee span.g { color: var(--gold); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 100px 52px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+.eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+.sh2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 54px); font-weight: 300; line-height: 1.15; margin-bottom: 16px; }
+.sh2 em { font-style: italic; color: var(--gold); }
+.ssub { font-size: 18px; color: var(--muted); line-height: 1.85; max-width: 500px; margin-bottom: 56px; }
+
+.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 48px; }
+.pi { background: var(--bg); padding: 32px 28px; transition: background 0.2s; }
+.pi:hover { background: var(--white); }
+.pi-n { font-family: 'Cormorant Garamond', serif; font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 14px; display: block; }
+.pi h4 { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+.pi p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+.p-close { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 32px 36px; font-size: 18px; color: var(--ink2); line-height: 1.85; max-width: 640px; }
+.p-close em { font-style: italic; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 21px; }
+
+.svcs-bg { background: var(--ink); padding: 100px 0; }
+.svcs-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
+.svcs-hdr { margin-bottom: 56px; }
+.svcs-hdr .eyebrow { color: #5a5248; }
+.svcs-hdr .eyebrow::before { background: #5a5248; }
+.svcs-hdr .sh2 { color: #f0ebe2; }
+.svcs-hdr .ssub { color: #6a6258; }
+.svcs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #252018; }
+.sc { background: #1c1915; padding: 44px 40px; transition: background 0.25s; position: relative; }
+.sc:hover { background: #242018; }
+.sc-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.sc-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); letter-spacing: 2px; }
+.badge { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; }
+.bm { background: #2a2218; color: var(--gold); border: 1px solid #3a3020; }
+.bo { background: #1e2820; color: #6aad8a; border: 1px solid #2a3828; }
+.sc h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: #e8e0d0; margin-bottom: 14px; line-height: 1.2; }
+.sc p { font-size: 15px; color: #6a6258; line-height: 1.85; }
+
+.how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); }
+.hs { padding: 40px 32px; border-right: 1px solid var(--border); position: relative; }
+.hs:last-child { border-right: none; }
+.hs::before { content: ''; position: absolute; top: 0; left: 32px; width: 40px; height: 2px; background: var(--gold); }
+.hs-n { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--border); line-height: 1; margin-bottom: 20px; }
+.hs h4 { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+.hs p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+.fit-bg { background: var(--gold-pale); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.fit-inner { max-width: 1100px; margin: 0 auto; padding: 100px 52px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; align-items: start; }
+.fit-intro p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-top: 16px; }
+.fcl { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.fcl::before { content: ''; display: block; width: 16px; height: 1px; }
+.fcl.y { color: var(--green); } .fcl.y::before { background: var(--green); }
+.fcl.n { color: #b05540; } .fcl.n::before { background: #b05540; }
+.fi { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--ink2); align-items: flex-start; }
+.fm { flex-shrink: 0; font-size: 12px; margin-top: 2px; }
+.fm.y { color: var(--green); } .fm.n { color: #b05540; }
+
+.cta-s { background: var(--ink); padding: 120px 52px; text-align: center; position: relative; overflow: hidden; }
+.cta-s::before { content: 'DAKSH JAIN'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 180px; font-weight: 600; color: #ffffff04; top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; letter-spacing: 16px; }
+.cta-ey { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #4a4540; margin-bottom: 36px; }
+.cta-ey::before { content: ''; display: block; width: 20px; height: 1px; background: #4a4540; }
+.cta-s h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5.5vw, 68px); font-weight: 300; color: #f0ebe2; line-height: 1.1; margin-bottom: 20px; }
+.cta-s h2 em { font-style: italic; color: var(--gold); }
+.cta-s > p { font-size: 17px; color: #6a6258; max-width: 460px; margin: 0 auto 48px; line-height: 1.85; }
+.btn-wa { display: inline-flex; align-items: center; gap: 12px; background: var(--gold); color: var(--white); padding: 18px 48px; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; text-decoration: none; transition: all 0.25s; border: 1px solid var(--gold); }
+.btn-wa:hover { background: transparent; color: var(--gold); }
+.btn-wa svg { width: 18px; height: 18px; fill: currentColor; }
+.cta-note { margin-top: 20px; font-size: 13px; color: #3a3530; letter-spacing: 0.5px; }
+.cta-links { display: flex; justify-content: center; gap: 32px; margin-top: 48px; padding-top: 40px; border-top: 1px solid #2a2520; flex-wrap: wrap; }
+.cta-links a { font-size: 14px; color: #5a5048; text-decoration: none; transition: color 0.2s; }
+.cta-links a:hover { color: var(--gold); }
+
+footer { background: var(--ink); border-top: 1px solid #1a1612; padding: 24px 52px; display: flex; justify-content: space-between; align-items: center; }
+footer p { font-size: 13px; color: #3a3530; }
+footer a { color: #3a3530; text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.22,1,0.36,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.hero-tag { animation: fadeUp 0.6s ease both; }
+.hero h1 { animation: fadeUp 0.65s ease 0.08s both; }
+.hero-sub { animation: fadeUp 0.65s ease 0.16s both; }
+.hero-actions { animation: fadeUp 0.65s ease 0.24s both; }
+.hero-right { animation: fadeUp 0.65s ease 0.12s both; }
+
+@media (max-width: 900px) {
+  nav { padding: 18px 24px; }
+  .nav-right .nav-link { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 60px 24px; min-height: auto; gap: 48px; }
+  .section { padding: 72px 24px; }
+  .svcs-inner { padding: 0 24px; }
+  .svcs-grid { grid-template-columns: 1fr; }
+  .problem-grid { grid-template-columns: 1fr 1fr; }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .hs { border-bottom: 1px solid var(--border); }
+  .fit-inner { grid-template-columns: 1fr; padding: 72px 24px; gap: 40px; }
+  .cta-s { padding: 80px 24px; }
+  footer { flex-direction: column; gap: 8px; padding: 20px 24px; text-align: center; }
+}
+@media (max-width: 600px) {
+  .problem-grid { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<nav>
+  <a href="https://www.dakshjain.co.in" class="nav-logo">DAKSH<span> · </span>JAIN</a>
+  <div class="nav-right">
+    <a href="#services" class="nav-link">services</a>
+    <a href="#how" class="nav-link">process</a>
+    <a href="https://www.linkedin.com/in/dakshjain-d/" target="_blank" class="nav-link">linkedin ↗</a>
+    <a href="https://wa.me/919625678872?text=Hi%20Daksh%2C%20I%20want%20to%20take%20my%20CA%20firm%20online." target="_blank" class="nav-cta">book a free call</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-tag">for ca firms · india</div>
+    <h1>your firm is great.<br><em>google doesn't</em><br>know that yet.</h1>
+    <p class="hero-sub">you've spent years building expertise. but your clients find you through word of mouth, old referrals, and luck. let's change that — without adding to your workload.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/919625678872?text=Hi%20Daksh%2C%20I%20want%20to%20take%20my%20CA%20firm%20online." target="_blank" class="btn-primary">book a free 20-min call →</a>
+      <a href="#services" class="btn-ghost">see what i do</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="stat-grid">
+        <div class="stat"><div class="stat-num">0<span>%</span></div><div class="stat-label">ca firms with a working digital presence</div></div>
+        <div class="stat"><div class="stat-num">6<span>×</span></div><div class="stat-label">focused services to take you fully online</div></div>
+        <div class="stat"><div class="stat-num">∞</div><div class="stat-label">leads your Google Business Profile can generate monthly</div></div>
+        <div class="stat"><div class="stat-num">20<span>min</span></div><div class="stat-label">free call to get started today</div></div>
+      </div>
+      <div class="hero-quote">
+        "the ca who shows up online gets the client. not the one who's better. the one who's visible."
+        <cite>— the honest truth nobody tells you</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>landing page</span><span class="g">·</span><span>google business profile</span><span class="g">·</span><span>linkedin management</span><span class="g">·</span><span>email newsletter</span><span class="g">·</span><span>custom gpt</span><span class="g">·</span><span>client onboarding system</span><span class="g">·</span>
+    <span>landing page</span><span class="g">·</span><span>google business profile</span><span class="g">·</span><span>linkedin management</span><span class="g">·</span><span>email newsletter</span><span class="g">·</span><span>custom gpt</span><span class="g">·</span><span>client onboarding system</span><span class="g">·</span>
+  </div>
+</div>
+
+<section class="section reveal">
+  <div class="eyebrow">the real problem</div>
+  <h2 class="sh2">you're losing clients<br>you don't even <em>know about.</em></h2>
+  <p class="ssub">think about the last time a stranger called you. not a referral. a complete stranger who found you, trusted you, and called you.<br>can't remember? that's the problem.</p>
+  <div class="problem-grid">
+    <div class="pi"><span class="pi-n">01</span><h4>no google presence</h4><p>you don't show up when someone types "ca near me." that search is happening in your city right now.</p></div>
+    <div class="pi"><span class="pi-n">02</span><h4>no website or a bad one</h4><p>a poor first impression online means the person closes the tab and calls someone else. instantly.</p></div>
+    <div class="pi"><span class="pi-n">03</span><h4>silent on linkedin</h4><p>your competitors are posting, building credibility. you're invisible. the client goes to whoever shows up.</p></div>
+    <div class="pi"><span class="pi-n">04</span><h4>onboarding is chaos</h4><p>new client? whatsapp. reminder. follow up. missing document. more whatsapp. zero system.</p></div>
+    <div class="pi"><span class="pi-n">05</span><h4>answering the same questions</h4><p>"what documents do i need?" ten times a day. the answer never changes. your time does.</p></div>
+    <div class="pi"><span class="pi-n">06</span><h4>clients forget you exist</h4><p>between tax seasons, you're not top of mind. they stop referring. they quietly move on.</p></div>
+  </div>
+  <div class="p-close">none of this means you're bad at your job.<br>it means nobody set up your digital presence properly.<br><br><em>that's exactly what i do.</em></div>
+</section>
+
+<div class="svcs-bg" id="services">
+  <div class="svcs-inner">
+    <div class="svcs-hdr reveal">
+      <div class="eyebrow">what i do</div>
+      <h2 class="sh2">six services.<br>one clear <em>outcome.</em></h2>
+      <p class="ssub">more clients finding you. less time wasted on work that should run itself.</p>
+    </div>
+    <div class="svcs-grid reveal">
+      <div class="sc"><div class="sc-top"><span class="sc-num">01</span><span class="badge bo">one-time</span></div><h3>landing page</h3><p>one place on the internet that works for you while you sleep. clean, sharp, mobile-ready. your services, your credibility, a whatsapp button. something that makes a visitor think: this ca knows what they're doing.</p></div>
+      <div class="sc"><div class="sc-top"><span class="sc-num">02</span><span class="badge bm">monthly</span></div><h3>google business profile</h3><p>this is where your next client is already looking. i set it up properly — photos, services, q&a — then manage it monthly. more reviews. better ranking. more calls from people actively looking for a ca right now.</p></div>
+      <div class="sc"><div class="sc-top"><span class="sc-num">03</span><span class="badge bm">monthly</span></div><h3>linkedin personal branding</h3><p>the ca who posts on linkedin gets the client. not because they're smarter. because they're visible. i rewrite your profile from scratch and post content in your voice every month. your name starts showing up. clients start coming in.</p></div>
+      <div class="sc"><div class="sc-top"><span class="sc-num">04</span><span class="badge bm">monthly</span></div><h3>email newsletter</h3><p>your existing clients are sitting on referrals they haven't given you yet. a monthly email — tax deadlines, tips, updates — keeps you top of mind all year. i write it. i send it. you get the credit.</p></div>
+      <div class="sc"><div class="sc-top"><span class="sc-num">05</span><span class="badge bo">one-time</span></div><h3>custom gpt</h3><p>a private ai built for your firm. clients ask questions — it answers like you would. at 11pm on a sunday, without you touching your phone. nobody in your clients' circle has seen this before. that alone puts you at a different level.</p></div>
+      <div class="sc"><div class="sc-top"><span class="sc-num">06</span><span class="badge bo">one-time</span></div><h3>client onboarding system</h3><p>the first experience a client has — that's what they remember. client fills a form, documents upload automatically, confirmation goes out, call gets booked. no chaos. no follow-up messages. looks extremely professional from day one.</p></div>
+    </div>
+  </div>
+</div>
+
+<section class="section reveal" id="how">
+  <div class="eyebrow">how it works</div>
+  <h2 class="sh2">simple process.<br>zero <em>jargon.</em></h2>
+  <p class="ssub" style="margin-bottom:48px;">i do the work. you don't.</p>
+  <div class="how-grid">
+    <div class="hs"><div class="hs-n">01</div><h4>free discovery call</h4><p>we talk about your firm, situation, and what needs fixing. no sales pitch. just a real conversation.</p></div>
+    <div class="hs"><div class="hs-n">02</div><h4>clear proposal</h4><p>scope and price before anything moves. no surprises. no hidden costs.</p></div>
+    <div class="hs"><div class="hs-n">03</div><h4>i build it</h4><p>minimal involvement from your side. share access, i handle everything else end-to-end.</p></div>
+    <div class="hs"><div class="hs-n">04</div><h4>you go live</h4><p>everything handed over with a walkthrough. monthly services run automatically from there.</p></div>
+  </div>
+</section>
+
+<div class="fit-bg">
+  <div class="fit-inner">
+    <div class="fit-intro reveal">
+      <div class="eyebrow">is this for you?</div>
+      <h2 class="sh2" style="font-size:clamp(28px,3vw,42px);">honest answer —<br>not for <em>everyone.</em></h2>
+      <p>i work with ca firms that want to be taken seriously online. that's the only filter.</p>
+    </div>
+    <div class="reveal">
+      <div class="fcl y">good fit</div>
+      <div class="fi"><span class="fm y">✓</span><span>solo ca or small firm (1–10 people)</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>growing purely on referrals, want to change that</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>no website or an outdated one</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>not active on linkedin</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>open to letting systems do the heavy lifting</span></div>
+    </div>
+    <div class="reveal">
+      <div class="fcl n">not a fit</div>
+      <div class="fi"><span class="fm n">✗</span><span>want overnight results</span></div>
+      <div class="fi"><span class="fm n">✗</span><span>already have a full digital team</span></div>
+      <div class="fi"><span class="fm n">✗</span><span>looking for the cheapest option</span></div>
+      <div class="fi"><span class="fm n">✗</span><span>not willing to share basic access</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="cta-s" id="cta">
+  <div class="cta-ey">ready?</div>
+  <h2>someone in your city just<br>googled <em>"ca near me."</em></h2>
+  <p>did they find you? let's find out what's stopping clients from reaching you — and how fast we can fix it.</p>
+  <a href="https://wa.me/919625678872?text=Hi%20Daksh%2C%20I%20want%20to%20take%20my%20CA%20firm%20online." target="_blank" class="btn-wa">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    book your free call on whatsapp
+  </a>
+  <p class="cta-note">no commitment. just clarity. free 20-minute call.</p>
+  <div class="cta-links">
+    <a href="mailto:dakshjain.djain@gmail.com">dakshjain.djain@gmail.com</a>
+    <a href="https://www.linkedin.com/in/dakshjain-d/" target="_blank">linkedin ↗</a>
+    <a href="https://wa.me/919625678872" target="_blank">+91 96256 78872</a>
+    <a href="https://www.dakshjain.co.in">dakshjain.co.in</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 DAKSH JAIN · <a href="https://www.dakshjain.co.in">dakshjain.co.in</a></p>
+  <p>helping ca firms go digital · india</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const cur = document.getElementById('cur'), curR = document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function anim(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(anim);})();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';curR.style.opacity='0.15';});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';curR.style.opacity='0.5';});});
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
