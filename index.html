@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daksh Jain — Online Presence Advisory & Implementation for Chartered Accountants in India</title>
+<meta name="description" content="We help Chartered Accountants and CA firms in India establish a structured, professional online presence — advisory-led and fully implemented. Improving discoverability for GST, tax, and audit services. Request a visibility review today.">
+<meta property="og:title" content="Daksh Jain — Online Presence Advisory & Implementation for CA Firms in India">
+<meta property="og:description" content="We help CA firms in India become discoverable and credible online. An advisory-led, execution-backed approach to digital presence — structured, implemented, and managed. Request a visibility review.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.dakshjain.co.in">
+<link rel="canonical" href="https://www.dakshjain.co.in">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #f7f4ef; --bg2: #f0ebe2; --ink: #1c1915; --ink2: #3d3830;
+  --muted: #8a8278; --gold: #b8873a; --gold-light: #f0e6d3; --gold-pale: #faf5ec;
+  --border: #e2dbd0; --white: #ffffff; --green: #3d6b4f; --green-light: #e8f0eb;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Georgia, 'Times New Roman', Times, serif; background: var(--bg); color: var(--ink); font-weight: 400; font-size: 17px; line-height: 1.8; cursor: default; overflow-x: hidden; }
+a, button { cursor: pointer; }
+nav { padding: 22px 52px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 500; background: var(--bg); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 22px; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: 1px; }
+.nav-logo span { color: var(--gold); font-size: 26px; line-height: 1; vertical-align: middle; }
+.nav-right { display: flex; align-items: center; gap: 32px; }
+.nav-link { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; font-family: Georgia, 'Times New Roman', Times, serif; }
+.nav-link:hover { color: var(--ink); }
+.nav-cta { font-size: 13px; font-weight: 700; color: var(--white); background: var(--ink); text-decoration: none; padding: 11px 24px; letter-spacing: 0.5px; transition: background 0.2s; font-family: Georgia, 'Times New Roman', Times, serif; }
+.nav-cta:hover { background: var(--gold); }
+
+.hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; max-width: 1200px; margin: 0 auto; padding: 60px 52px; gap: 60px; align-items: center; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 36px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.hero-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+.hero h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: clamp(38px, 4.8vw, 66px); line-height: 1.12; font-weight: 400; margin-bottom: 28px; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-sub { font-size: 17px; color: var(--muted); max-width: 420px; line-height: 1.9; margin-bottom: 44px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-primary { background: var(--gold); color: var(--white); padding: 16px 36px; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; text-decoration: none; display: inline-block; transition: all 0.25s; border: 1px solid var(--gold); min-height: 48px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.btn-primary:hover { background: transparent; color: var(--gold); }
+.btn-ghost { font-size: 14px; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: all 0.2s; font-family: Georgia, 'Times New Roman', Times, serif; }
+.btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+.hero-card { background: var(--white); border: 1px solid var(--border); padding: 40px; position: relative; }
+.hero-card::before { content: ''; position: absolute; top: 8px; left: 8px; right: -8px; bottom: -8px; border: 1px solid var(--gold); opacity: 0.25; pointer-events: none; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-bottom: 1px; }
+.stat { background: var(--white); padding: 28px 24px; }
+.stat-num { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 44px; font-weight: 400; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+.stat-num span { color: var(--gold); font-size: 26px; }
+.stat-label { font-size: 13px; color: var(--muted); line-height: 1.5; font-family: Georgia, 'Times New Roman', Times, serif; }
+.hero-quote { background: var(--gold-pale); border: 1px solid var(--border); padding: 24px; margin-top: 1px; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; font-size: 18px; color: var(--ink2); line-height: 1.7; }
+.hero-quote cite { display: block; font-style: normal; font-size: 12px; color: var(--muted); margin-top: 10px; letter-spacing: 1px; font-family: Georgia, 'Times New Roman', Times, serif; }
+
+.marquee-wrap { background: var(--ink); padding: 16px 0; overflow: hidden; display: flex; }
+.marquee { display: flex; animation: marquee 22s linear infinite; white-space: nowrap; }
+.marquee span { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #4a4540; padding: 0 28px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.marquee span.g { color: var(--gold); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 100px 52px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+.sh2 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: clamp(30px, 3.6vw, 50px); font-weight: 400; line-height: 1.2; margin-bottom: 16px; }
+.sh2 em { font-style: italic; color: var(--gold); }
+.ssub { font-size: 18px; color: var(--muted); line-height: 1.85; max-width: 500px; margin-bottom: 56px; font-family: Georgia, 'Times New Roman', Times, serif; }
+
+.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 48px; }
+.pi { background: var(--bg); padding: 32px 28px; transition: background 0.2s; }
+.pi:hover { background: var(--white); }
+.pi-n { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 14px; display: block; }
+.pi h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.pi p { font-size: 14px; color: var(--muted); line-height: 1.8; font-family: Georgia, 'Times New Roman', Times, serif; }
+.p-close { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 32px 36px; font-size: 18px; color: var(--ink2); line-height: 1.85; max-width: 640px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.p-close em { font-style: italic; color: var(--gold); font-family: Georgia, 'Times New Roman', Times, serif; font-size: 21px; }
+
+.svcs-bg { background: var(--ink); padding: 100px 0; }
+.svcs-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
+.svcs-hdr { margin-bottom: 56px; }
+.svcs-hdr .eyebrow { color: #5a5248; }
+.svcs-hdr .eyebrow::before { background: #5a5248; }
+.svcs-hdr .sh2 { color: #f0ebe2; }
+.svcs-hdr .ssub { color: #6a6258; }
+.svcs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #252018; }
+.sc { background: #1c1915; padding: 44px 40px; transition: background 0.25s; position: relative; }
+.sc:hover { background: #242018; }
+.sc-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.sc-num { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 13px; color: var(--gold); letter-spacing: 2px; }
+.badge { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.bm { background: #2a2218; color: var(--gold); border: 1px solid #3a3020; }
+.bo { background: #1e2820; color: #6aad8a; border: 1px solid #2a3828; }
+.sc h3 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 22px; font-weight: 400; color: #e8e0d0; margin-bottom: 14px; line-height: 1.3; }
+.sc p { font-size: 15px; color: #6a6258; line-height: 1.85; font-family: Georgia, 'Times New Roman', Times, serif; }
+.sc-list { list-style: none; margin-top: 20px; border-top: 1px solid #2a2520; padding-top: 20px; }
+.sc-list li { font-size: 13px; color: #5a5248; padding: 8px 0; border-bottom: 1px solid #232018; display: flex; gap: 10px; align-items: flex-start; font-family: Georgia, 'Times New Roman', Times, serif; }
+.sc-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+
+.how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); }
+.hs { padding: 40px 32px; border-right: 1px solid var(--border); position: relative; }
+.hs:last-child { border-right: none; }
+.hs::before { content: ''; position: absolute; top: 0; left: 32px; width: 40px; height: 2px; background: var(--gold); }
+.hs-n { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 52px; font-weight: 400; color: var(--border); line-height: 1; margin-bottom: 20px; }
+.hs h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 10px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.hs p { font-size: 14px; color: var(--muted); line-height: 1.8; font-family: Georgia, 'Times New Roman', Times, serif; }
+
+.fit-bg { background: var(--gold-pale); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.fit-inner { max-width: 1100px; margin: 0 auto; padding: 100px 52px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; align-items: start; }
+.fit-intro p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-top: 16px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.fcl { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.fcl::before { content: ''; display: block; width: 16px; height: 1px; }
+.fcl.y { color: var(--green); } .fcl.y::before { background: var(--green); }
+.fcl.n { color: #b05540; } .fcl.n::before { background: #b05540; }
+.fi { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--ink2); align-items: flex-start; font-family: Georgia, 'Times New Roman', Times, serif; }
+.fm { flex-shrink: 0; font-size: 12px; margin-top: 2px; }
+.fm.y { color: var(--green); } .fm.n { color: #b05540; }
+
+.cta-s { background: var(--ink); padding: 120px 52px; text-align: center; position: relative; overflow: hidden; }
+.cta-s::before { content: 'DAKSH JAIN'; position: absolute; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 180px; font-weight: 700; color: #ffffff04; top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; letter-spacing: 16px; }
+.cta-ey { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #4a4540; margin-bottom: 36px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.cta-ey::before { content: ''; display: block; width: 20px; height: 1px; background: #4a4540; }
+.cta-s h2 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: clamp(32px, 4.8vw, 60px); font-weight: 400; color: #f0ebe2; line-height: 1.15; margin-bottom: 20px; }
+.cta-s h2 em { font-style: italic; color: var(--gold); }
+.cta-s > p { font-size: 17px; color: #6a6258; max-width: 480px; margin: 0 auto 48px; line-height: 1.9; font-family: Georgia, 'Times New Roman', Times, serif; }
+.btn-wa { display: inline-flex; align-items: center; gap: 12px; background: var(--gold); color: var(--white); padding: 18px 48px; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; text-decoration: none; transition: all 0.25s; border: 1px solid var(--gold); min-height: 56px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.btn-wa:hover { background: transparent; color: var(--gold); }
+.btn-wa svg { width: 18px; height: 18px; fill: currentColor; }
+.cta-note { margin-top: 20px; font-size: 13px; color: #3a3530; letter-spacing: 0.5px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.cta-links { display: flex; justify-content: center; gap: 32px; margin-top: 48px; padding-top: 40px; border-top: 1px solid #2a2520; flex-wrap: wrap; }
+.cta-links a { font-size: 14px; color: #5a5048; text-decoration: none; transition: color 0.2s; font-family: Georgia, 'Times New Roman', Times, serif; }
+.cta-links a:hover { color: var(--gold); }
+
+footer { background: var(--ink); border-top: 1px solid #252018; padding: 40px 0 0; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; align-items: start; }
+.footer-col { display: flex; flex-direction: column; gap: 6px; }
+.footer-name { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 14px; font-weight: 700; color: #e8e0d0; margin-bottom: 2px; }
+.footer-desc { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 13px; color: #6a6258; line-height: 1.6; }
+.footer-col a { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 13px; color: #6a6258; text-decoration: none; line-height: 1.6; transition: color 0.2s; }
+.footer-col a:hover { color: var(--gold); }
+.footer-col p { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 13px; color: #6a6258; line-height: 1.6; }
+.footer-bottom { max-width: 1100px; margin: 28px auto 0; padding: 16px 52px; border-top: 1px solid #252018; }
+.footer-copy { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 11px; color: #3a3530; }
+@media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; padding: 0 24px; gap: 32px; }
+  .footer-bottom { padding: 16px 24px; }
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; padding: 0 24px; gap: 24px; }
+  .footer-bottom { padding: 16px 24px; }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.22,1,0.36,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.hero-tag { animation: fadeUp 0.6s ease both; }
+.hero h1 { animation: fadeUp 0.65s ease 0.08s both; }
+.hero-sub { animation: fadeUp 0.65s ease 0.16s both; }
+.hero-actions { animation: fadeUp 0.65s ease 0.24s both; }
+.hero-right { animation: fadeUp 0.65s ease 0.12s both; }
+
+@media (max-width: 900px) {
+  nav { padding: 18px 24px; }
+  .nav-right .nav-link { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 48px 24px; min-height: auto; gap: 40px; }
+  .section { padding: 72px 24px; }
+  .svcs-inner { padding: 0 24px; }
+  .svcs-grid { grid-template-columns: 1fr; }
+  .problem-grid { grid-template-columns: 1fr 1fr; }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .hs { border-bottom: 1px solid var(--border); }
+  .fit-inner { grid-template-columns: 1fr; padding: 72px 24px; gap: 40px; }
+  .cta-s { padding: 80px 24px; }
+  footer { flex-direction: column; gap: 20px; padding: 32px 24px; }
+}
+@media (max-width: 600px) {
+  .problem-grid { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: clamp(32px, 10vw, 48px); }
+  .hero-sub { font-size: 16px; }
+  .btn-primary, .btn-wa { width: 100%; justify-content: center; text-align: center; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.dakshjain.co.in" class="nav-logo">DAKSH JAIN</a>
+  <div class="nav-right">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#how" class="nav-link">Our Approach</a>
+    <a href="https://www.linkedin.com/in/dakshjain-d/" target="_blank" class="nav-link">LinkedIn ↗</a>
+    <a href="https://wa.me/919625678872?text=Hi%20Daksh%2C%20I%20would%20like%20to%20request%20a%20visibility%20review%20for%20my%20CA%20firm." target="_blank" class="nav-cta">Request a Visibility Review</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-tag">Online Presence Advisory & Implementation · Chartered Accountants · India</div>
+    <h1>Helping CA firms become<br><em>discoverable, credible,</em><br>and chosen online.</h1>
+    <p class="hero-sub">Many CA practices in India have built strong client relationships through referrals and professional networks. Sustaining that foundation — and supplementing it with structured inbound enquiries — requires a professionally managed online presence. We advise on the approach and implement it in full.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/919625678872?text=Hi%20Daksh%2C%20I%20would%20like%20to%20request%20a%20visibility%20review%20for%20my%20CA%20firm." target="_blank" class="btn-primary">Request a Visibility Review →</a>
+      <a href="#services" class="btn-ghost">View our services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num">Many<span>.</span></div>
+          <div class="stat-label">CA practices across India operate without a structured, actively managed digital presence</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2<span>.</span></div>
+          <div class="stat-label">focused service frameworks — one addressing visibility, one addressing professional authority</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Local<span>.</span></div>
+          <div class="stat-label">A well-maintained Google Business Profile improves search relevance and supports consistent inbound enquiries</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">20<span>min</span></div>
+          <div class="stat-label">visibility review to assess where your practice currently stands and what can be improved</div>
+        </div>
+      </div>
+      <div class="hero-quote">
+        "A CA firm's reputation, however strong in practice, is only as accessible as its online presence allows it to be."
+        <cite>— On the gap between professional expertise and digital discoverability</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>Google Business Profile</span><span class="g">·</span><span>Professional Landing Page</span><span class="g">·</span><span>LinkedIn Positioning</span><span class="g">·</span><span>Content Advisory</span><span class="g">·</span><span>Client Newsletter</span><span class="g">·</span><span>Structured Inbound Presence</span><span class="g">·</span>
+    <span>Google Business Profile</span><span class="g">·</span><span>Professional Landing Page</span><span class="g">·</span><span>LinkedIn Positioning</span><span class="g">·</span><span>Content Advisory</span><span class="g">·</span><span>Client Newsletter</span><span class="g">·</span><span>Structured Inbound Presence</span><span class="g">·</span>
+  </div>
+</div>
+
+<section class="section reveal">
+  <div class="eyebrow">The Context</div>
+  <h2 class="sh2">Where many CA practices<br>face a <em>structural gap.</em></h2>
+  <p class="ssub">Referrals remain the primary source of new clients for most CA firms in India. This is a sound foundation — but a narrow one. When prospective clients search independently for chartered accountants, GST consultants, or tax advisors, the majority of firms are not positioned to be found or evaluated.</p>
+  <div class="problem-grid">
+    <div class="pi">
+      <span class="pi-n">01</span>
+      <h4>Limited search visibility</h4>
+      <p>When a business owner independently searches for a CA near me, a GST consultant, or a tax advisor in their city, many practices do not appear in relevant results. The enquiry passes to firms that are better positioned online.</p>
+    </div>
+    <div class="pi">
+      <span class="pi-n">02</span>
+      <h4>No structured web presence</h4>
+      <p>Without a professional landing page, a prospective client has no structured means to assess a firm's services, areas of expertise, or contact information. This creates friction before a conversation has even begun.</p>
+    </div>
+    <div class="pi">
+      <span class="pi-n">03</span>
+      <h4>Underutilised professional networks</h4>
+      <p>LinkedIn has become a meaningful channel for professional services in India. Many CA practitioners have a profile but have not structured it to reflect their practice's depth or attract relevant enquiries.</p>
+    </div>
+    <div class="pi">
+      <span class="pi-n">04</span>
+      <h4>Concentrated dependence on referrals</h4>
+      <p>A referral-dependent practice is inherently variable in its growth. A well-managed digital presence provides a supplementary, more consistent channel for new enquiries — without displacing the referral network.</p>
+    </div>
+    <div class="pi">
+      <span class="pi-n">05</span>
+      <h4>Infrequent client communication</h4>
+      <p>Between annual engagements, many CA firms have limited structured contact with their client base. Consistent, relevant communication supports retention and keeps the firm present in clients' professional consideration.</p>
+    </div>
+    <div class="pi">
+      <span class="pi-n">06</span>
+      <h4>Expertise without visible documentation</h4>
+      <p>Proficiency in GST advisory, ITR filing, statutory audit, and compliance is not self-evident to a prospective client browsing online. A structured content presence gives that expertise a visible, credible form.</p>
+    </div>
+  </div>
+  <div class="p-close">These are structural observations — not assessments of practice quality.<br>Each of them is addressable through the right framework and consistent execution.<br><br><em>That is the work we undertake.</em></div>
+</section>
+
+<div class="svcs-bg" id="services">
+  <div class="svcs-inner">
+    <div class="svcs-hdr reveal">
+      <div class="eyebrow">Our Services</div>
+      <h2 class="sh2">Two service frameworks.<br>One <em>clear objective.</em></h2>
+      <p class="ssub">Each framework is designed, structured, and implemented in full — helping CA firms across India build a digital presence that supports consistent inbound enquiries without adding to the demands of practice.</p>
+    </div>
+    <div class="svcs-grid reveal">
+      <div class="sc">
+        <div class="sc-top"><span class="sc-num">01</span><span class="badge bo">Visibility Framework</span></div>
+        <h3>Improving how your practice appears in relevant searches</h3>
+        <p>A significant proportion of businesses and individuals search for chartered accountants, GST consultants, and tax advisors online before making contact. We assess the gaps in your firm's current search presence, define the appropriate approach, and implement both deliverables in full — creating a credible, professionally structured first impression.</p>
+        <ul class="sc-list">
+          <li>Google Business Profile — structured setup and ongoing monthly management, optimised for local search relevance across your city and practice areas</li>
+          <li>Professional Landing Page — a clear, well-considered web presence that communicates your firm's services and establishes credibility before a conversation begins</li>
+        </ul>
+      </div>
+      <div class="sc">
+        <div class="sc-top"><span class="sc-num">02</span><span class="badge bm">Authority Framework</span></div>
+        <h3>Strengthening how your firm is perceived by prospective clients</h3>
+        <p>Professional visibility is the foundation. Sustained trust requires that prospective clients can assess your firm's expertise and character before they have spoken with you. We structure the approach, produce all content, and manage ongoing execution — building that perception consistently through the platforms your clients and referral partners use regularly.</p>
+        <ul class="sc-list">
+          <li>LinkedIn Positioning — profile restructured to reflect your firm's expertise, supported by monthly content published in your professional voice</li>
+          <li>Content Advisory — considered, technically grounded posts covering GST, income tax, audit, and compliance that reflect genuine subject matter expertise</li>
+          <li>Client Newsletter — a structured monthly communication to your existing client base, reinforcing professional relationships and supporting continued referrals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section reveal" id="how">
+  <div class="eyebrow">Our Approach</div>
+  <h2 class="sh2">A structured engagement.<br>Minimal demand on <em>your time.</em></h2>
+  <p class="ssub" style="margin-bottom:48px;">Our engagements are advisory-led and execution-backed. We define the approach, implement the work, and manage ongoing delivery. The demand on your time is limited to an initial brief and access to the relevant accounts.</p>
+  <div class="how-grid">
+    <div class="hs">
+      <div class="hs-n">01</div>
+      <h4>Visibility Review</h4>
+      <p>We assess your firm's current online position and identify the specific areas affecting your discoverability and professional perception. No obligation is incurred at this stage.</p>
+    </div>
+    <div class="hs">
+      <div class="hs-n">02</div>
+      <h4>Proposal & Scope</h4>
+      <p>A clear proposal is provided before any engagement begins — covering scope, timeline, and fees. All terms are agreed in writing in advance. There are no hidden costs.</p>
+    </div>
+    <div class="hs">
+      <div class="hs-n">03</div>
+      <h4>Execution</h4>
+      <p>We manage all deliverables with minimal involvement required from your side. You provide access and an initial brief; we carry out the work end-to-end.</p>
+    </div>
+    <div class="hs">
+      <div class="hs-n">04</div>
+      <h4>Handover & Continuity</h4>
+      <p>All assets and accounts are handed over with a structured walkthrough. Ongoing retainer work is delivered on a consistent monthly basis, with regular reporting.</p>
+    </div>
+  </div>
+</section>
+
+<div class="fit-bg">
+  <div class="fit-inner">
+    <div class="fit-intro reveal">
+      <div class="eyebrow">Who We Work With</div>
+      <h2 class="sh2" style="font-size:clamp(28px,3vw,42px);">We are selective about<br>the engagements <em>we take on.</em></h2>
+      <p>We work with CA practices that recognise the professional value of a structured digital presence and are prepared to invest appropriately in building one over time.</p>
+    </div>
+    <div class="reveal">
+      <div class="fcl y">Well Suited</div>
+      <div class="fi"><span class="fm y">✓</span><span>Solo practitioner or small CA firm of up to 10 professionals</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>Practice currently reliant on referrals and seeking a supplementary inbound channel</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>No current website, or a web presence that no longer adequately represents the firm</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>Limited or inactive professional presence on LinkedIn</span></div>
+      <div class="fi"><span class="fm y">✓</span><span>Comfortable with a fully managed, structured engagement requiring minimal internal resource</span></div>
+    </div>
+    <div class="reveal">
+      <div class="fcl n">Less Well Suited</div>
+      <div class="fi"><span class="fm n">✗</span><span>Practices expecting material results within an unrealistically short timeframe</span></div>
+      <div class="fi"><span class="fm n">✗</span><span>Firms with an established in-house digital or communications function</span></div>
+      <div class="fi"><span class="fm n">✗</span><span>Engagements where cost minimisation is the primary consideration</span></div>
+      <div class="fi"><span class="fm n">✗</span><span>Firms not in a position to share the account access required for execution</span></div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <p class="footer-name">Daksh Jain</p>
+      <p class="footer-desc">Online Presence Advisory &amp; Implementation for Chartered Accountants</p>
+    </div>
+    <div class="footer-col">
+      <a href="mailto:dakshjain.djain@gmail.com">dakshjain.djain@gmail.com</a>
+      <a href="https://www.linkedin.com/in/dakshjain-d/" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="footer-col">
+      <p>Based in India</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Daksh Jain</span>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
